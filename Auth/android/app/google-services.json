@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1084107523044",
+    "project_id": "auth-dbc6c",
+    "storage_bucket": "auth-dbc6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084107523044:android:63d280224dad03ff657df1",
+        "android_client_info": {
+          "package_name": "com.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084107523044-fl04vssphutj83cg5qkvluqoi1kd0nhv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFLUz5Hvuj8MG2EPFS07INyWxLpjsdr1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084107523044-fl04vssphutj83cg5qkvluqoi1kd0nhv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
