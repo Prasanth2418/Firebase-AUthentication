@@ -4,6 +4,7 @@ import SignupScreen from '../Screens/SignupScreen'
 import LoginScreen from '../Screens/LoginScreen'
 import OnboardingScreen from '../Screens/OnboardingScreen'
 import ForgetPasswordScreen from '../Screens/ForgetPasswordScreen'
+import SentScreen from '../Screens/SentScreen'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
@@ -42,6 +43,9 @@ const AuthStack = () => {
              options={{header:()=> null}}
             />
             <Stack.Screen name="forget" component={ForgetPasswordScreen}
+            options={{header:()=> null}}
+            />
+            <Stack.Screen name='sent' component={SentScreen}
             options={{header:()=> null}}
             />
         

@@ -10,10 +10,7 @@ const ForgetPasswordScreen = ({navigation}) => {
     if (email) {
       auth()
         .sendPasswordResetEmail(email)
-        .then(() =>
-          setMsg(
-            'Password reset mail sent successfully! Please check your inbox',
-          ),
+        .then(() => navigation.navigate("sent")
         )
         .catch(error => {
           if (error.code === 'auth/user-not-found') {
