@@ -79,7 +79,6 @@ const LoginScreen = ({navigation}) => {
             onChangeText={userEmail => handleCheckEmail(userEmail)}
             placeholder="Enter your username"
             value={email}
-            autoFocus={true}
           />
             {checkValidEmail && email ? (
           <Text
