@@ -27,7 +27,7 @@ export const Splash = (isAppReady = props.isAppReady) => {
     if (state === FADE_IN_IMAGE) {
       Animated.timing(imageOpacity, {
         toValue: 1,
-        duration: 1000, // Fade in duration
+        duration: 700, // Fade in duration
         useNativeDriver: true,
       }).start(() => {
         setState(WAIT_FOR_APP_TO_BE_READY);
