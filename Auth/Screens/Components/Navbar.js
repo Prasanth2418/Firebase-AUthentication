@@ -2,6 +2,7 @@ import {View, Image, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
 import auth from '@react-native-firebase/auth';
 import {horizontalScale, verticalScale} from '../../Dimensions/Metric';
+import LogoutIcon from "react-native-vector-icons/MaterialIcons"
 
 const Navbar = () => {
   const logout = () => {
@@ -23,10 +24,10 @@ const Navbar = () => {
             color: 'black',
             textAlign: 'right',
             marginRight: 10,
-            marginTop: verticalScale(-30),
+            marginTop: verticalScale(-37),
             fontSize: 15,
           }}>
-          Log out
+        <LogoutIcon name="logout" size={30}/>
         </Text>
       </TouchableOpacity>
     </View>
