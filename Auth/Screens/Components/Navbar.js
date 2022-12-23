@@ -3,13 +3,12 @@ import React from 'react';
 import auth from '@react-native-firebase/auth';
 import {horizontalScale, verticalScale} from '../../Dimensions/Metric';
 
-
 const Navbar = () => {
   const logout = () => {
     auth().signOut();
   };
   return (
-    <View style={{backgroundColor: 'white', height: 60, elevation: 20}}>
+    <View style={{backgroundColor: 'white', height: 60}}>
       <View>
         <Image
           style={{width: 115, height: 55, marginLeft: horizontalScale(-15)}}
