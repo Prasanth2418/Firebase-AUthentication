@@ -37,15 +37,15 @@ const TabNavigation = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarIcon: ({focused}) => <HomeIcon name="home" size={20} />,
+            tabBarIcon: ({focused}) => <HomeIcon name="home" size={25} color={focused ?"blue":"black"}/>,
           }}></Tab.Screen>
 
         <Tab.Screen
-          name="trasactions"
+          name="Transactions"
           component={Trasactions}
           options={{
             tabBarIcon: ({focused}) => (
-              <MoneyIcon name="money-check" size={20} />
+              <MoneyIcon name="money-check" size={20} color={focused ?"blue":"black"}/>
             ),
           }}></Tab.Screen>
 
@@ -53,7 +53,7 @@ const TabNavigation = () => {
           name="scan & pay"
           component={ScanScreen}
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: () => (
               <View
                 style={{
                   position: 'absolute',
@@ -66,7 +66,7 @@ const TabNavigation = () => {
                   zIndex: 10,
                 }}>
                 <View style={[styles.button, styles.actionBtn]}>
-                  <ScanIcon name="scan1" size={35} color="white" />
+                  <ScanIcon name="scan1" size={35} color="white"  />
                 </View>
               </View>
             ),
@@ -76,7 +76,7 @@ const TabNavigation = () => {
           name="Wallet"
           component={SecondScreen}
           options={{
-            tabBarIcon: ({focused}) => <WalletIcon name="wallet" size={20} />,
+            tabBarIcon: ({focused}) => <WalletIcon name="wallet" size={25} color={focused ?"blue":"black"} />,
           }}></Tab.Screen>
 
         <Tab.Screen
@@ -84,7 +84,7 @@ const TabNavigation = () => {
           component={Settings}
           options={{
             tabBarIcon: ({focused}) => (
-              <SettingsIcon name="settings" size={20} />
+              <SettingsIcon name="settings" size={25}  color={focused ?"blue":"black"}/>
             ),
           }}></Tab.Screen>
       </Tab.Navigator>

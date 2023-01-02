@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "server":"json-server --watch db.json"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.11",
@@ -17,6 +18,8 @@
     "@react-navigation/drawer": "^6.5.6",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.9.7",
+    "axios": "^1.2.1",
+    "json-server": "^0.17.1",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-bootsplash": "^4.4.0",

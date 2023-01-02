@@ -63,7 +63,7 @@ const ForgetPasswordScreen = ({navigation}) => {
         <Text
           style={{
             backgroundColor: 'blue',
-            width: 370,
+            width:"95%",
             height: 40,
             fontSize: 20,
             textAlign: 'center',

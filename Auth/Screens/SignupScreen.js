@@ -57,9 +57,7 @@ const SignupScreen = ({navigation}) => {
       <View style={styles.MainContainer}>
         <Image
           style={styles.tinyLogo3}
-          source={{
-            uri: 'https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000',
-          }}
+          source={require("../Assets/Logo.png")}
         />
       </View>
       <Text style={styles.container}>Blockchain</Text>
@@ -169,7 +167,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'blue',
-    width: 370,
+    width:"95%",
     height: 40,
     fontSize: 20,
     textAlign: 'center',
@@ -180,13 +178,13 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   tinyLogo3: {
-    marginTop: 20,
+    marginTop: "5%",
     width: 100,
     height: 100,
     alignSelf: 'center',
   },
   container: {
-    marginTop: 10,
+    marginTop: 0,
     textAlign: 'center',
     fontSize: 25,
     color: 'black',

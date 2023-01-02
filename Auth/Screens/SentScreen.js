@@ -15,7 +15,7 @@ const SentScreen = ({navigation}) => {
         source={require("../Assets/Sent.gif")}
         style={{height: 200, width: 200}}
       />
-      <Text>
+      <Text style={{textAlign:'center',fontSize:17}}>
         Password reset mail sent successfully,please check your inbox.
       </Text>
       <TouchableOpacity onPress={()=>navigation.navigate("Login")}>

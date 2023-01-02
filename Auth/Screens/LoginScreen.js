@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   KeyboardAvoidingView,
+  ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
 import auth from '@react-native-firebase/auth';
@@ -16,8 +17,6 @@ const LoginScreen = ({navigation}) => {
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
   const [checkValidEmail, setCheckValidEmail] = useState(false);
- 
-
 
   //  Check email format
   const handleCheckEmail = userEmail => {
@@ -55,14 +54,12 @@ const LoginScreen = ({navigation}) => {
   };
 
   return (
-    <KeyboardAvoidingView behavior="height">
-      <View style={{backgroundColor: 'white', height: '100%'}}>
+    <View style={{backgroundColor: 'white', height: '100%'}}>
+      <KeyboardAvoidingView behavior="padding">
         <View style={styles.MainContainer}>
           <Image
             style={styles.tinyLogo3}
-            source={{
-              uri: 'https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000',
-            }}
+            source={require('../Assets/Logo.png')}
           />
         </View>
         <Text style={styles.container}>Blockchain</Text>
@@ -80,18 +77,18 @@ const LoginScreen = ({navigation}) => {
             placeholder="Enter your username"
             value={email}
           />
-            {checkValidEmail && email ? (
-          <Text
-            style={{
-              paddingRight: 17,
-              color: 'red',
-              fontSize: 12,
-              marginTop: -12,
-              textAlign: 'right',
-            }}>
-            Wrong format email.
-          </Text>
-        ) : null}
+          {checkValidEmail && email ? (
+            <Text
+              style={{
+                paddingRight: 17,
+                color: 'red',
+                fontSize: 12,
+                marginTop: -12,
+                textAlign: 'right',
+              }}>
+              Wrong format email.
+            </Text>
+          ) : null}
           <Text style={{paddingLeft: 17, fontSize: 20, color: 'black'}}>
             Password
           </Text>
@@ -103,17 +100,18 @@ const LoginScreen = ({navigation}) => {
             maxLength={6}
             secureTextEntry={true}
           />
-          {password && password.length!==6?(
-          <Text
-            style={{
-              fontSize: 12,
-              paddingLeft: 17,
-              marginTop: -10,
-              color: 'red',
-            }}>
-            Password must be in 6 charecters only.
-          </Text>):null}
-          
+          {password && password.length !== 6 ? (
+            <Text
+              style={{
+                fontSize: 12,
+                paddingLeft: 17,
+                marginTop: -10,
+                color: 'red',
+              }}>
+              Password must be in 6 charecters only.
+            </Text>
+          ) : null}
+
           <TouchableOpacity
             activeOpacity={0.8}
             onPress={() => navigation.navigate('forget')}>
@@ -147,8 +145,8 @@ const LoginScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </View>
   );
 };
 
@@ -156,6 +154,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     margin: 0,
     padding: 0,
+   
   },
   input: {
     height: 40,
@@ -166,7 +165,8 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'blue',
-    width: 370,
+    width:"95%",
+  
     height: 40,
     fontSize: 20,
     textAlign: 'center',
@@ -177,13 +177,13 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(15),
   },
   tinyLogo3: {
-    marginTop: verticalScale(25),
+    marginTop: '5%',
     width: 100,
     height: 100,
     alignSelf: 'center',
   },
   container: {
-    marginTop: verticalScale(15),
+    marginTop: 0,
     textAlign: 'center',
     fontSize: 25,
     color: 'black',

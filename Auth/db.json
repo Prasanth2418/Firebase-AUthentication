@@ -1,0 +1,25 @@
+{
+  "bags": [
+      {
+          "id": 1,
+          "title": "Stylish Bag",
+          "color": "orange",
+          "imgurl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+          "stock": 10
+      },
+      {
+          "id": 2,
+          "title": "Cool Bag",
+          "color": "black",
+          "imgurl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
+          "stock": 5
+      },
+      {
+          "id": 3,
+          "title": "Interesting Bag",
+          "color": "blue",
+          "imgurl": "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1057&q=80",
+          "stock": 17
+      }
+  ]
+}
