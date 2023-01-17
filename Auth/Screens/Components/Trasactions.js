@@ -1,8 +1,10 @@
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView,Image,TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {horizontalScale, verticalScale} from '../../Dimensions/Metric';
+import {Avatar} from 'react-native-elements';
 
-const Trasactions = () => {
+const Trasactions = ({navigation}) => {
   const [transactions, setTransactions] = useState([]);
   useEffect(() => {
     axios
@@ -12,6 +14,35 @@ const Trasactions = () => {
       .then(res => setTransactions(res.data._embedded.records));
   }, []);
   return (
+    <View>
+    <View style={{backgroundColor: 'white', height: 60}}>
+    <View>
+      <Image
+        style={{width: 115, height: 55, marginLeft: horizontalScale(-15)}}
+        source={require('../../Assets/Logo.png')}
+      />
+    </View>
+
+    <TouchableOpacity activeOpacity={0.8}>
+      <View
+        style={{
+          color: 'black',
+          alignItems: 'flex-end',
+          marginRight: 10,
+          marginTop: verticalScale(-40),
+          fontSize: 15,
+        }}>
+        <Avatar
+        rounded
+        showEditButton
+          source={{
+            uri: 'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+          }}
+          onPress={() => navigation.openDrawer()} 
+        />
+      </View>
+    </TouchableOpacity>
+  </View>
     <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
       <View style={{backgroundColor: 'white'}}>
         <Text style={{fontSize: 20, fontWeight: 'bold', padding: 10}}>
@@ -55,6 +86,7 @@ const Trasactions = () => {
         ))}
       </View>
     </ScrollView>
+    </View>
   );
 };
 

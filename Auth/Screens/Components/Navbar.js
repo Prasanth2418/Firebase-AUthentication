@@ -5,10 +5,8 @@ import {horizontalScale, verticalScale} from '../../Dimensions/Metric';
 import UserIcon from 'react-native-vector-icons/FontAwesome';
 import { Avatar } from 'react-native-elements';
 
-const Navbar = () => {
-  const logout = () => {
-    auth().signOut();
-  };
+const Navbar = ({navigation}) => {
+  
   return (
     <View style={{backgroundColor: 'white', height: 60}}>
       <View>
@@ -33,7 +31,7 @@ const Navbar = () => {
             source={{
               uri: 'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHw%3D&w=1000&q=80',
             }}
-         onPress={logout}
+            onPress={() => navigation.openDrawer()} 
           />
         </View>
       </TouchableOpacity>

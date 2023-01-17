@@ -1,8 +1,11 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity,Image} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {horizontalScale, verticalScale} from '../../Dimensions/Metric';
 
-const HomeScreen = () => {
+import {Avatar} from 'react-native-elements';
+
+const HomeScreen = ({navigation}) => {
   const [details, setDetails] = useState([]);
   const update = () => {
     axios
@@ -21,6 +24,34 @@ const HomeScreen = () => {
 
   return (
     <View style={{backgroundColor: 'white', height: '100%'}}>
+      <View style={{backgroundColor: 'white', height: 60}}>
+        <View>
+          <Image
+            style={{width: 115, height: 55, marginLeft: horizontalScale(-15)}}
+            source={require('../../Assets/Logo.png')}
+          />
+        </View>
+
+        <TouchableOpacity activeOpacity={0.8}>
+          <View
+            style={{
+              color: 'black',
+              alignItems: 'flex-end',
+              marginRight: 10,
+              marginTop: verticalScale(-40),
+              fontSize: 15,
+            }}>
+            <Avatar
+              rounded
+              showEditButton
+              source={{
+                uri: 'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+              }}
+              onPress={() => navigation.openDrawer()}
+            />
+          </View>
+        </TouchableOpacity>
+      </View>
       <View style={{flexDirection: 'row', margin: 10}}>
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>Account balance</Text>
 

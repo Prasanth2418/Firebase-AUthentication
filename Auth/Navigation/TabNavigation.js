@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import HomeIcon from 'react-native-vector-icons/Entypo';
 import ScanIcon from 'react-native-vector-icons/AntDesign';
 import SettingsIcon from 'react-native-vector-icons/Ionicons';
@@ -12,14 +13,12 @@ import SecondScreen from '../Screens/Components/SecondScreen';
 import ScanScreen from '../Screens/Components/ScanScreen';
 import Settings from '../Screens/Components/Settings';
 import Trasactions from '../Screens/Components/Trasactions';
-import Navbar from '../Screens/Components/Navbar';
+
 
 const Tab = createBottomTabNavigator();
-
 const TabNavigation = () => {
   return (
     <>
-     <Navbar />
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
@@ -34,10 +33,16 @@ const TabNavigation = () => {
           },
         }}>
         <Tab.Screen
-          name="Home"
+          name="Home2"
           component={HomeScreen}
           options={{
-            tabBarIcon: ({focused}) => <HomeIcon name="home" size={25} color={focused ?"blue":"black"}/>,
+            tabBarIcon: ({focused}) => (
+              <HomeIcon
+                name="home"
+                size={25}
+                color={focused ? 'blue' : 'black'}
+              />
+            ),
           }}></Tab.Screen>
 
         <Tab.Screen
@@ -45,7 +50,11 @@ const TabNavigation = () => {
           component={Trasactions}
           options={{
             tabBarIcon: ({focused}) => (
-              <MoneyIcon name="money-check" size={20} color={focused ?"blue":"black"}/>
+              <MoneyIcon
+                name="money-check"
+                size={20}
+                color={focused ? 'blue' : 'black'}
+              />
             ),
           }}></Tab.Screen>
 
@@ -66,7 +75,7 @@ const TabNavigation = () => {
                   zIndex: 10,
                 }}>
                 <View style={[styles.button, styles.actionBtn]}>
-                  <ScanIcon name="scan1" size={35} color="white"  />
+                  <ScanIcon name="scan1" size={35} color="white" />
                 </View>
               </View>
             ),
@@ -76,7 +85,13 @@ const TabNavigation = () => {
           name="Wallet"
           component={SecondScreen}
           options={{
-            tabBarIcon: ({focused}) => <WalletIcon name="wallet" size={25} color={focused ?"blue":"black"} />,
+            tabBarIcon: ({focused}) => (
+              <WalletIcon
+                name="wallet"
+                size={25}
+                color={focused ? 'blue' : 'black'}
+              />
+            ),
           }}></Tab.Screen>
 
         <Tab.Screen
@@ -84,7 +99,11 @@ const TabNavigation = () => {
           component={Settings}
           options={{
             tabBarIcon: ({focused}) => (
-              <SettingsIcon name="settings" size={25}  color={focused ?"blue":"black"}/>
+              <SettingsIcon
+                name="settings"
+                size={25}
+                color={focused ? 'blue' : 'black'}
+              />
             ),
           }}></Tab.Screen>
       </Tab.Navigator>
