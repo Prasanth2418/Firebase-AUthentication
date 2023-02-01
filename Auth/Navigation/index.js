@@ -3,7 +3,7 @@ import Route from './Route';
 import {useState, useEffect} from 'react';
 import {WithSplashScreen} from '../Screens/SplashScreen';
 
-const Providers = () => {
+const AppNav = () => {
   const [isAppReady, setIsAppReady] = useState(false);
 
   useEffect(() => {
@@ -15,4 +15,4 @@ const Providers = () => {
     </WithSplashScreen>
   );
 };
-export default Providers;
+export default AppNav;

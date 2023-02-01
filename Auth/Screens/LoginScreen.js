@@ -8,11 +8,13 @@ import {
   KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import auth from '@react-native-firebase/auth';
 import {verticalScale} from '../Dimensions/Metric';
+import { AuthContext } from '../Navigation/AuthContext';
 
 const LoginScreen = ({navigation}) => {
+  const {login} = useContext (AuthContext)
   const [email, setEmail] = useState();
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
@@ -33,6 +35,7 @@ const LoginScreen = ({navigation}) => {
 
   //Login Logic
   const Login = () => {
+    
     if (email && password) {
       auth()
         .signInWithEmailAndPassword(email, password)
@@ -66,6 +69,7 @@ const LoginScreen = ({navigation}) => {
         <Text style={styles.container2}>
           Welcome! Please login your account.
         </Text>
+       
 
         <View style={{marginTop: verticalScale(35)}}>
           <Text style={{paddingLeft: 17, fontSize: 20, color: 'black'}}>

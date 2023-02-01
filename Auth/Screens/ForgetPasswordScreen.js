@@ -1,25 +1,18 @@
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import auth from '@react-native-firebase/auth';
+import axios from 'axios';
 
 const ForgetPasswordScreen = ({navigation}) => {
-  const [email, setEmail] = useState();
+  const [emailId, setEmail] = useState('');
   const [error, setError] = useState(null);
   const [msg, setMsg] = useState(null);
   const Forgetpassword = () => {
-    if (email) {
-      auth()
-        .sendPasswordResetEmail(email)
-        .then(() => navigation.navigate("sent")
-        )
-        .catch(error => {
-          if (error.code === 'auth/user-not-found') {
-            setError('please enter correct email address!');
-          }
-        });
-    } else {
-      alert('Please enter user mail id');
-    }
+    axios
+      .post(`http://localhost:8095/CrossBorderPayments/sendMail`, {
+        recipient: emailId,
+      })
+      .then(res => console.log(res));
   };
   return (
     <View>
@@ -45,7 +38,6 @@ const ForgetPasswordScreen = ({navigation}) => {
         </Text>
       </View>
       <View style={{marginTop: 40}}>
-       
         <TextInput
           style={{
             height: 40,
@@ -54,16 +46,16 @@ const ForgetPasswordScreen = ({navigation}) => {
             padding: 10,
             borderRadius: 5,
           }}
-          onChangeText={userEmail => setEmail(userEmail)}
+          onChangeText={email => setEmail(email)}
           placeholder="Enter your email"
-          value={email}
+          value={emailId}
         />
       </View>
       <TouchableOpacity onPress={Forgetpassword} activeOpacity={0.8}>
         <Text
           style={{
             backgroundColor: 'blue',
-            width:"95%",
+            width: '95%',
             height: 40,
             fontSize: 20,
             textAlign: 'center',

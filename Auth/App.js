@@ -1,9 +1,9 @@
 import React from 'react';
-
-import Providers from './Navigation';
+import {AuthProvider} from './Navigation/AuthContext';
+import AppNav from './Navigation';
 
 const App = () => {
-  return <Providers />;
+  return <AuthProvider><AppNav /></AuthProvider>;
 };
 
 export default App;
